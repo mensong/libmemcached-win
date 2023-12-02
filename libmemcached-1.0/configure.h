@@ -2,8 +2,8 @@
  * 
  *  Libmemcached library
  *
- *  Copyright (C) 2011 Data Differential, http://datadifferential.com/ 
- *  All rights reserved.
+ *  Copyright (C) 2011 Data Differential, http://datadifferential.com/
+ *  Copyright (C) 2006-2009 Brian Aker, Trond Norbye All rights reserved.
  *
  *  Redistribution and use in source and binary forms, with or without
  *  modification, are permitted provided that the following conditions are
@@ -37,32 +37,16 @@
 
 #pragma once
 
-struct memcached_stat_st {
-  unsigned long connection_structures;
-  unsigned long curr_connections;
-  unsigned long curr_items;
-  unsigned long pid;
-  unsigned long pointer_size;
-  unsigned long rusage_system_microseconds;
-  unsigned long rusage_system_seconds;
-  unsigned long rusage_user_microseconds;
-  unsigned long rusage_user_seconds;
-  unsigned long threads;
-  unsigned long time;
-  unsigned long total_connections;
-  unsigned long total_items;
-  unsigned long uptime;
-  unsigned long long bytes;
-  unsigned long long bytes_read;
-  unsigned long long bytes_written;
-  unsigned long long cmd_get;
-  unsigned long long cmd_set;
-  unsigned long long evictions;
-  unsigned long long get_hits;
-  unsigned long long get_misses;
-  unsigned long long limit_maxbytes;
-  char version[MEMCACHED_VERSION_STRING_LENGTH];
-  void *__future; // @todo create a new structure to place here for future usage
-  memcached_st *root;
-};
+#ifdef __cplusplus
+extern "C" {
+#endif
 
+//@DEPRECATED@
+//@LIBMEMCACHED_WITH_SASL_SUPPORT@
+
+#define LIBMEMCACHED_VERSION_STRING "1.0"
+#define LIBMEMCACHED_VERSION_HEX 0x001
+
+#ifdef __cplusplus
+}
+#endif
